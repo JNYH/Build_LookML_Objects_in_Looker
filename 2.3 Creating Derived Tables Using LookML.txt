@@ -1,0 +1,27 @@
+Build LookML Objects in Looker: GSP858 Creating Derived Tables Using LookML solution 2.3
+https://youtu.be/fPU0fQHcmhk
+
+
+Guide to discover Google Cloud training 
+Google Cloud Skills Boost
+https://www.cloudskillsboost.google/quests/187
+https://www.qwiklabs.com/quests/187
+Qwiklabs GSP858 Tutorial answer
+
+Build LookML Objects in Looker: Creating Derived Tables Using LookML GSP858
+⏱ Timestamps ⏱
+├ 00:00 Start Lab
+├ 00:22 Log in to Looker
+├ 00:56 Task 1. Create a SQL derived table summarizing details for each order
+├─ 01:03 Define a new derived table using a SQL query
+├─ 01:55 Create a new view file for the SQL derived table
+├ 04:11 Task 2. Create a native derived table summarizing details for each order
+├─ 04:17 Define a new native derived table from an Explore query
+├─ 05:50 Create a new view file for the native derived table
+├ 07:53 Task 3. Join a new view to an Explore
+├─ 07:56 Join the view for the SQL derived table
+├─ 08:53 Review the data and generated SQL from the SQL derived table in the Explore
+├ 10:36 Task 4. Persist a derived table
+├─ 10:41 Persist the native derived table
+├─ 11:38 Review the generated SQL for the persistent derived table in the Explore
+├ 12:49 Completed!
