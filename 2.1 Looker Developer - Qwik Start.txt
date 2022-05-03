@@ -18,3 +18,8 @@ Build LookML Objects in Looker: Looker Developer - Qwik Start GSP891
 ├ 02:56 Task 2. Join a View to an existing Explore
 ├─ 04:57 Commit changes and deploy to production
 ├ 05:18 Completed!
+
+
+
+*** View all tutorial videos ***
+https://github.com/JNYH/Build_LookML_Objects_in_Looker
