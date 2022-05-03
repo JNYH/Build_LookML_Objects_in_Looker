@@ -120,3 +120,8 @@ datagroup: order_items_challenge_datagroup {
   sql_trigger: SELECT MAX(order_item_id) from order_items ;;
   max_cache_age: "4 hour"
 }
+
+
+
+*** View all tutorial videos ***
+https://github.com/JNYH/Build_LookML_Objects_in_Looker
