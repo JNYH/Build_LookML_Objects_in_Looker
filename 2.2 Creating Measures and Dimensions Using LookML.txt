@@ -1,0 +1,25 @@
+Build LookML Objects in Looker: GSP890 Creating Measures and Dimensions Using LookML solution 2.2
+https://youtu.be/hAp4gz16Jbw
+
+
+Guide to discover Google Cloud training 
+Google Cloud Skills Boost
+https://www.cloudskillsboost.google/quests/187
+https://www.qwiklabs.com/quests/187
+Qwiklabs GSP890 Tutorial answer
+
+Build LookML Objects in Looker: Creating Measures and Dimensions Using LookML GSP890
+⏱ Timestamps ⏱
+├ 00:00 Start Lab
+├ 00:26 Log in to Looker
+├ 01:06 Task 1. Creating dimensions
+├─ 01:11 Create a new dimension for age group tiers
+├─ 03:59 Create a new dimension for email source
+├─ 05:58 Create a new dimension for shipping days
+├ 08:48 Task 2. Creating measures
+├─ 08:54 Create a measure of the distinct number of orders
+├─ 11:02 Create a total sales measure
+├ 13:14 Task 3. Creating advanced measures
+├─ 13:17 Create a filtered measure of the total sales for only the users who came to the website via the email traffic source
+├─ 15:07 Create a measure for the percentage of sales that are attributed to users coming from the email traffic source
+├ 17:06 Completed!
