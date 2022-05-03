@@ -23,3 +23,8 @@ Build LookML Objects in Looker: Creating Measures and Dimensions Using LookML GS
 ├─ 13:17 Create a filtered measure of the total sales for only the users who came to the website via the email traffic source
 ├─ 15:07 Create a measure for the percentage of sales that are attributed to users coming from the email traffic source
 ├ 17:06 Completed!
+
+
+
+*** View all tutorial videos ***
+https://github.com/JNYH/Build_LookML_Objects_in_Looker
