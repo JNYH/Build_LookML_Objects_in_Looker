@@ -25,3 +25,8 @@ Build LookML Objects in Looker: Creating Derived Tables Using LookML GSP858
 ├─ 10:41 Persist the native derived table
 ├─ 11:38 Review the generated SQL for the persistent derived table in the Explore
 ├ 12:49 Completed!
+
+
+
+*** View all tutorial videos ***
+https://github.com/JNYH/Build_LookML_Objects_in_Looker
