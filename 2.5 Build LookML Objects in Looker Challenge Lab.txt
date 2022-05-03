@@ -1,0 +1,122 @@
+Build LookML Objects in Looker: GSP361 Challenge Lab solution 2.5
+https://youtu.be/DP_oXW8MGcY
+
+
+Guide to discover Google Cloud training 
+Google Cloud Skills Boost
+https://www.cloudskillsboost.google/quests/187
+https://www.qwiklabs.com/quests/187
+Qwiklabs GSP361 Tutorial answer
+
+Build LookML Objects in Looker: Challenge Lab GSP361
+⏱ Timestamps ⏱
+├ 00:00 Start Lab
+├ 00:10 Log in to Looker
+├ 00:53 Task 1. Create dimensions and measures
+├─ 02:53 Join the view to an Explore
+├ 04:51 Task 2. Create a persistent derived table
+├─ 04:58 Create a native derived table
+├─ 08:30 Persist the derived table
+├ 09:36 Task 3. Use Explore filters
+├─ 09:53 Filter #1
+├─ 10:35 Filter #2
+├─ 11:57 Filter #3
+├─ 12:49 Filter #4
+├ 13:56 Task 4. Apply a datagroup to an Explore
+├ 15:21 (*I think there is a bug here*)
+├ 19:04 Completed!
+
+#### Task 1. Create dimensions and measures
+#### order_items_challenge.view
+  # TODO: Add dimensions and measures here
+  dimension: order_id {
+    type: number
+    sql: ${TABLE}.order_id ;;
+  }
+  dimension: is_search_source {
+    type: yesno
+    sql: ${users.traffic_source} = "Search" ;;
+  }
+  measure: sales_from_complete_search_users {
+    type: sum
+    sql: ${TABLE}.sale_price ;;
+    filters: [is_search_source: "Yes", order_items.status: "Complete"]
+    value_format_name: usd_0
+  }
+  measure: total_gross_margin {
+    type: sum
+    sql: ${TABLE}.sale_price - ${inventory_items.cost} ;;
+    value_format_name: usd_0
+  }
+  dimension: return_days {
+    type: number
+    sql: DATE_DIFF(${order_items.delivered_date}, ${order_items.returned_date}, DAY) ;;
+  }
+
+#### training_ecommerce.model
+explore: order_items {
+  join: order_items_challenge {
+    type: left_outer
+    sql_on: ${order_items.order_id} = ${order_items_challenge.order_id} ;;
+    relationship: many_to_one
+  }
+
+#### Task 2. Create a persistent derived table
+#### training_ecommerce.model
+explore: order_items {
+  join: user_details {
+    type: left_outer
+    sql_on: ${order_items.user_id} = ${user_details.user_id} ;;
+    relationship: many_to_one
+  }
+
+#### user_details.view
+view: user_details {
+  derived_table: {
+    explore_source: order_items {
+      column: order_id {}
+      column: user_id {}
+      column: total_revenue {}
+      column: age { field: users.age }
+      column: city { field: users.city }
+      column: state { field: users.state }
+    }
+    datagroup_trigger: training_ecommerce_default_datagroup    #do NOT add this
+  }
+
+#### training_ecommerce.model
+datagroup: training_ecommerce_default_datagroup {
+  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "2 hour"    #change duration
+}
+
+#### Task 3. Use Explore filters
+#### note replace 'greater' with the greater symbol (not allowed in the text here)
+#### training_ecommerce.model
+# Filter #1
+explore: order_items {
+  always_filter: {
+    filters: [order_items.sale_price: "greater=104"]
+  }
+# Filter #2
+explore: order_items {
+  conditionally_filter: {
+    filters: [order_items.shipped_date: "2018"]
+    unless: [order_items.status, order_items.delivered_date]
+  }
+# Filter #3
+explore: order_items {
+  sql_always_having: ${average_sale_price} greater= 76 ;;
+
+# Filter #4
+explore: order_items {
+  always_filter: {
+    filters: [order_items.status: "Shipped", users.state: "California", users.traffic_source: "Search"]
+  }
+
+#### Task 4. Apply a datagroup to an Explore
+#### training_ecommerce.model
+datagroup: order_items_challenge_datagroup {
+  sql_trigger: SELECT MAX(order_item_id) from order_items ;;
+  max_cache_age: "4 hour"
+}
