@@ -1,0 +1,19 @@
+Build LookML Objects in Looker: GSP892 Filtering Explores with LookML solution 2.4
+https://youtu.be/-yihq488qbc
+
+
+Guide to discover Google Cloud training 
+Google Cloud Skills Boost
+https://www.cloudskillsboost.google/quests/187
+https://www.qwiklabs.com/quests/187
+Qwiklabs GSP892 Tutorial answer
+
+Build LookML Objects in Looker: Filtering Explores with LookML GSP892
+⏱ Timestamps ⏱
+├ 00:00 Start Lab
+├ 00:24 Log in to Looker
+├ 01:52 Task 1. Add an always_filter
+├ 04:25 Task 2. Add a sql_always_where filter
+├ 06:20 Task 3. Add a sql_always_having filter
+├ 07:50 Task 4. Add a conditionality_filter
+├ 10:40 Completed!
